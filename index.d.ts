@@ -50,12 +50,12 @@ export class NuimoClient {
   /**
    * @param {Function<Update, void>}
    */
-  listen (callback: Function): void;
+  listen (callback: (update: Update) => void): void;
 
   /**
    * @param {Function<void>}
    */
-  close (callback: Function): void;
+  close (callback: () => void): void;
 }
 
 ///////////
