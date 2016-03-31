@@ -10,6 +10,8 @@ import event = require('events');
  */
 export function withNuimo(): Promise<NuimoClient>;
 
+export default withNuimo;
+
 /////////
 /// client.js
 ////////
