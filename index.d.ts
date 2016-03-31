@@ -22,7 +22,7 @@ export class NuimoClient {
    * @param {event.EventEmitter}
    * @param {noble.Peripheral}
    */
-  constructor (emitter: event.EventEmitter, matrix, peripheral: noble.Peripheral);
+  constructor (emitter: event.EventEmitter, matrix: noble.Characteristic, peripheral: noble.Peripheral);
 
   /**
    * @return {Promise<Buffer>}
@@ -80,7 +80,7 @@ export class ClickUpdate extends Update {
 
   down: Boolean;
 
-  accept(vistor): any;
+  accept(vistor: any): any;
 }
 
 
@@ -92,7 +92,7 @@ export class TurnUpdate extends Update {
 
   offset: Number;
 
-  accept(vistor): any;
+  accept(vistor: any): any;
 }
 
 
@@ -104,7 +104,7 @@ export class SwipeUpdate extends Update {
 
   direction: String;
 
-  accept(vistor): any;
+  accept(vistor: any): any;
 }
 
 
