@@ -36,16 +36,15 @@ export class NuimoClient {
    * @param {Array}
    * return Buffer
    */
-  createLEDMatrixBuffer(data: Array<String>): Buffer;
-  createLEDMatrixBuffer(data: Array<Number>): Buffer;
+  createLEDMatrixBuffer(data: Array<string> | Array<number>): Buffer;
 
   /**
    * @param Buffer
-   * @param {Number?} (in percentage)
-   * @param {Number?} (in seconds)
+   * @param {number?} (in percentage)
+   * @param {number?} (in seconds)
    * @return {Promise<null>}
    */
-  writeLEDS (state: Buffer, brightness?: Number, delay?: Number): Promise<Object>;
+  writeLEDS (state: Buffer, brightness?: number, delay?: number): Promise<Object>;
 
   /**
    * @param {Function<Update, void>}
@@ -66,11 +65,11 @@ export class NuimoClient {
  * @class
  */
 export class Update {
-  constructor (type: String, time: Date);
+  constructor (type: string, time: Date);
 
   time: Date;
 
-  type: String;
+  type: string;
 }
 
 
@@ -78,9 +77,9 @@ export class Update {
  * @class
  */
 export class ClickUpdate extends Update {
-  constructor(down: Boolean);
+  constructor(down: boolean);
 
-  down: Boolean;
+  down: boolean;
 
   accept(vistor: any): any;
 }
@@ -90,9 +89,9 @@ export class ClickUpdate extends Update {
  * @class
  */
 export class TurnUpdate extends Update {
-  constructor(offset: Number);
+  constructor(offset: number);
 
-  offset: Number;
+  offset: number;
 
   accept(vistor: any): any;
 }
@@ -102,9 +101,9 @@ export class TurnUpdate extends Update {
  * @class
  */
 export class SwipeUpdate extends Update {
-  constructor(direction: String);
+  constructor(direction: string);
 
-  direction: String;
+  direction: string;
 
   accept(vistor: any): any;
 }
